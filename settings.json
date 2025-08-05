@@ -1,13 +1,13 @@
 {
-  "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
-  "git.autofetch": true,
-  "editor.autoClosingBrackets": "always",
-  "github.copilot.editor.enableAutoCompletions": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[html]": {
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "vim.useCtrlKeys": true,
@@ -27,18 +27,6 @@
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
     },
-    {
-      "before": ["<leader>", "p"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": ["<leader>", "E"],
-      "commands": ["workbench.action.focusActiveEditorGroup"]
-    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -48,9 +36,46 @@
     {
       "before": ["E"],
       "after": ["g", "_"] // Último caracter no blanco
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["scrollLineUp"] // Primer caracter no blanco
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["scrollLineDown"] // Primer caracter no blanco
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.insertLineAfter"]
+    },
+    {
+      "before": ["<leader>", "O"],
+      "commands": ["editor.action.insertLineBefore"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["H"],
+      "after": ["H", "z", "z"]
+    },
+    {
+      "before": ["L"],
+      "after": ["L", "z", "z"]
     }
   ],
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["b"],
+      "after": ["^"] // Primer caracter no blanco
+    },
+    {
+      "before": ["E"],
+      "after": ["g", "_"] // Último caracter no blanco
+    }
+  ],
+  "editor.lineNumbers": "relative",
+  "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
 }

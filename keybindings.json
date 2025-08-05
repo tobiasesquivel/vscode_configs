@@ -11,6 +11,11 @@
     "when": "editorTextFocus && !editorTabMovesFocus"
   },
   {
+    "key": "ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
     "key": "ctrl+n",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus"
@@ -43,6 +48,10 @@
   {
     "key": "alt+e",
     "command": "workbench.view.explorer"
+  },
+  {
+    "key": "alt+p",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "alt+h",
