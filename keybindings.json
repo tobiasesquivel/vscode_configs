@@ -23,27 +23,27 @@
   {
     "key": "ctrl+f",
     "command": "explorer.newFolder",
-    "when": "explorerviewletfocus"
+    "when": "explorerViewletFocus"
   },
   {
     "key": "j",
     "command": "list.focusDown",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "k",
     "command": "list.focusUp",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "h",
     "command": "list.collapse",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "l",
     "command": "list.expand",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "alt+e",
