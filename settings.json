@@ -1,90 +1,112 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
-  "security.workspace.trust.untrustedFiles": "open",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "vim.useCtrlKeys": true,
-  "vim.leader": "<Space>",
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["k", "j"],
-      "after": ["<ESC>"]
-    },
-    {
-      "before": ["j", "k"],
-      "after": ["<ESC>"]
-    }
-  ],
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"]
-    },
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["B"],
-      "after": ["^"] // Primer caracter no blanco
-    },
-    {
-      "before": ["E"],
-      "after": ["g", "_"] // Último caracter no blanco
-    },
-    {
-      "before": ["<C-h>"],
-      "commands": ["scrollLineUp"] // Primer caracter no blanco
-    },
-    {
-      "before": ["<C-l>"],
-      "commands": ["scrollLineDown"] // Primer caracter no blanco
-    },
-    {
-      "before": ["<leader>", "o"],
-      "commands": ["editor.action.insertLineAfter"]
-    },
-    {
-      "before": ["<leader>", "O"],
-      "commands": ["editor.action.insertLineBefore"]
-    },
-    {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["H"],
-      "after": ["H", "z", "z"]
-    },
-    {
-      "before": ["L"],
-      "after": ["L", "z", "z"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["b"],
-      "after": ["^"] // Primer caracter no blanco
-    },
-    {
-      "before": ["E"],
-      "after": ["g", "_"] // Último caracter no blanco
-    }
-  ],
+  // =========================================================
+  // APARIENCIA Y COMPORTAMIENTO DEL EDITOR
+  // =========================================================
+  "window.zoomLevel": 2,
   "editor.lineNumbers": "relative",
-  "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.enableMenuBarMnemonics": false,
+  "editor.linkedEditing": true,
+
+  // =========================================================
+  // FORMATO Y AUTOMATIZACIÓN
+  // =========================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // =========================================================
+  // NEOVIM & EXTENSIONES DE NAVEGACIÓN
+  // =========================================================
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
   },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+  "vscode-neovim.compositeKeys": {
+    "jk": { "command": "vscode-neovim.escape" },
+    "kj": { "command": "vscode-neovim.escape" },
   },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "vscode-neovim.compositeTimeout": 300,
+  "vscode-neovim.disableExtension": ["github.copilot"],
+  "findJump.dimWhenActive": true,
+  "findJump.darkDimWhenActive": true,
+
+  // =========================================================
+  // MENÚ ESPACIAL (VSPACECODE)
+  // =========================================================
+  "vspacecode.bindingOverrides": [
+    {
+      "keys": "e",
+      "name": "Toggle Sidebar",
+      "type": "command",
+      "command": "workbench.action.toggleSidebarVisibility",
+    },
+    {
+      "keys": "w.v",
+      "name": "Split Editor",
+      "type": "command",
+      "command": "workbench.action.splitEditor",
+    },
+    {
+      "keys": "w.q",
+      "name": "Close Editor",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor",
+    },
+    {
+      "keys": "f.f",
+      "name": "Quick Open",
+      "type": "command",
+      "command": "workbench.action.quickOpen",
+    },
+    {
+      "keys": "f.r",
+      "name": "Open Recent",
+      "type": "command",
+      "command": "workbench.action.openRecent",
+    },
+    {
+      "keys": "f.s",
+      "name": "Save File",
+      "type": "command",
+      "command": "workbench.action.files.save",
+    },
+    {
+      "keys": "/",
+      "name": "Find in Files",
+      "type": "command",
+      "command": "workbench.action.findInFiles",
+    },
+  ],
+
+  // =========================================================
+  // EXPLORADOR DE ARCHIVOS Y BÚSQUEDA
+  // =========================================================
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true,
   },
+
+  // =========================================================
+  // LENGUAJES (JS, TS, PYTHON, JSON)
+  // =========================================================
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "python.languageServer": "Default",
+  "json.schemaDownload.enable": true,
+
+  // =========================================================
+  // GIT & CONTROL DE VERSIONES
+  // =========================================================
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+  },
+  "terminal.integrated.shellIntegration.enabled": false,
 }
